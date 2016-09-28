@@ -21,7 +21,6 @@ The Windows package with no installation requirements has been placed in the "bi
 ### Requirements
 You should have the following packages/dependencies installed on your system:
 
-* qmake (included in *libqt5-qtbase-common-devel*) 
 * libQt5Widgets5
 * libQt5Gui5
 * libQt5Core5
