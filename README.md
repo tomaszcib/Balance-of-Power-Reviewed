@@ -4,6 +4,8 @@ Current version: beta 1.0
 
 The game takes place in 1980s, a period of geopolitical rivalry between the USA and the USSR. In the Balance of Power, the player takes the role of the American President or General Secretary of the Soviet Union. The goal is to improve the player's country's standing in the world relative to the other superpower, while maintaining the peace and avoiding a nuclear war. A variety of possible means one can use, either military, economic or political, make the gameplay complex and challenging. 
 
+![In-game screenshot](https://github.com/tomaszcib/Balance-of-Power-Reviewed/blob/master/thumbnail.png)
+
 The game manual can be found [here](http://www.atarimania.com/game-atari-st-balance-of-power-the-1990-edition_8658.html).
 
 ## Disclaimer
