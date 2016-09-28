@@ -33,7 +33,7 @@ You should have the following packages/dependencies installed on your system:
 As well as the newest possible version of *g++* compiler. 
 
 ### Downloading and running
-Download the bin/linux-BoPReviewed-Desktop-Release folder from the repository and unpack it, for example to /home/your-name/BoPReviewed folder.
+Download the bin/gnulinux-build folder from the repository and unpack it, for example to /home/your-name/BoPReviewed folder.
 
 Execute in the shell script:
 
@@ -53,4 +53,6 @@ command.
 * C++ compiler with C++11 standard compatibility (g++ for GNU/Linux and MinGW for Windows in my case)
 
 ### Loading the project file
-If you want to compile the source manually, download the *src* folder from this repository and open *bopreviewed.pro* file inside your Qt Creator IDE. Simply press "Run" button (or Ctrl+R) to compile it and run in your operating system.
+If you want to compile the source manually, download the *src* folder from this repository and open *bopreviewed.pro* file inside your Qt Creator IDE. Simply press "Build" button.
+
+**Important:** before running the app, remember to copy .txt and .dat files from src/data subfolder to your destination build directory.
