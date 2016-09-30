@@ -15,7 +15,7 @@ The game is a port of [Chris Crawford's](http://www.erasmatazz.com/) work called
 * Loading the game: there are issues with loading the SaveGame.dat file atthe startup causing country leaders' names strings not to be read correctly. In general, loading functions are not 100% sure to be working and some bugs may occur as well.
 
 ## Running the game - Windows
-The Windows package with no installation requirements has been placed in the "bin" folder. The .zip contains game binary file, shared libraries and data files, the only thing to do is to unpack it and run the main .exe.
+The Windows package with no installation requirements has been placed in the [bin](bin/) folder. The .zip contains game binary file, shared libraries and data files, the only thing to do is to unpack it and run the main .exe.
 
 ## Running the game - GNU/Linux
 ### Requirements
@@ -29,10 +29,10 @@ You should have the following packages/dependencies installed on your system:
 * glibc
 * libgcc_s1
 
-As well as the newest possible version of *g++* compiler if a need to recompile the object files occurs
+As well as the newest possible version of *g++* compiler if a need to recompile the object files occurs.
 
 ### Downloading and running
-Download the bin/gnulinux-build folder from the repository and unpack it, for example to /home/your-username/BoPReviewed folder.
+Download the [bin/gnulinux-build](bin/gnulinux-build) folder from the repository and unpack it, for example to /home/your-username/BoPReviewed folder.
 
 Execute in the shell script:
 
@@ -47,6 +47,6 @@ Execute in the shell script:
 * C++ compiler with C++11 standard compatibility (g++ for GNU/Linux and MinGW for Windows in my case)
 
 ### Loading the project file
-If you want to compile the source manually, download the *src* folder from this repository and open *bopreviewed.pro* file inside your Qt Creator IDE. Simply press "Build" button.
+If you want to compile the source manually, download the [src](src/) folder from this repository and open *bopreviewed.pro* file inside your Qt Creator IDE. Simply press "Build" button.
 
-**Important:** before running the app, remember to copy .txt and .dat files from src/data subfolder to your destination build directory.
+**Important:** before running the app, remember to copy **.txt** and **.dat** files from [src/data](src/data/) subfolder to your Qt working directory.
