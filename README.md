@@ -32,19 +32,14 @@ You should have the following packages/dependencies installed on your system:
 As well as the newest possible version of *g++* compiler if a need to recompile the object files occurs
 
 ### Downloading and running
-Download the bin/gnulinux-build folder from the repository and unpack it, for example to /home/your-name/BoPReviewed folder.
+Download the bin/gnulinux-build folder from the repository and unpack it, for example to /home/your-username/BoPReviewed folder.
 
 Execute in the shell script:
 
-`$ cd /home/your-name/BoPReviewed`
+`$ cd /home/your-username/BoPReviewed`
 
 `$ ./BoPReviewed`
 
-if somehow the application does not show up, try recompiling it with
-
-`$ make`
-
-command.
 
 ## Building the game with Qt Creator (any operating system)
 ### Requirements
