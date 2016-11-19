@@ -153,8 +153,8 @@ void Resources::setStrings(){
 
     //insurgency
     strg[113]="Civil war";
-    strg[114]="Major guerilla war";
-    strg[115]="Minor guerilla war";
+    strg[114]="Major guerrilla war";
+    strg[115]="Minor guerrilla war";
     strg[116]="Rampant terrorism";
     strg[117]="Minor terrorism";
     strg[118]="Slight unrest";
