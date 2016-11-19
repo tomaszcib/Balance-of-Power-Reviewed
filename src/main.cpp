@@ -28,8 +28,6 @@ int main(int argc, char *argv[])
     qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
     MainBox mainBox;
     QFont font;
-    font.setPixelSize(10);
-    app.setFont(font);
     /*Uncomment one of these lines. Set the OSX_Flag true while compiling
      * this project on Apple OS X. The program may look uglier and will not
      * work properly without this flag.
