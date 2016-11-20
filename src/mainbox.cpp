@@ -967,9 +967,7 @@ void MainBox::paintEvent(QPaintEvent * /* event */)
     painter.drawRect(12,369,120,111);
 
 }
-//! [10]
 
-//! [11]
 void MainBox::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) {
@@ -1086,6 +1084,62 @@ void MainBox::mousePressEvent(QMouseEvent *event)
                 countryHighlight->adjustSize();
             }
             selectNothingEffect();
+        }
+    }
+}
+
+void MainBox::mouseDoubleClickEvent(QMouseEvent *event){
+    if(event->button()==Qt::LeftButton){
+        int index = itemAt(event->pos());
+        if(index<N){
+        if (index != -1) {
+            curSelection=index;
+            if((mapMode>=8&&mapMode<=16)||mapMode==39){
+                drawMap(mapMode,curSelection,curIOMode);
+                countryHighlight->setText(resrc.strg[28]);
+                shapeItems[index].setColor(QColor(0,0,0));
+                countryHighlight->adjustSize();
+            }
+            else if((mapMode>=18&&mapMode<=26)){
+                if(index>1) { curSelection=curAddParam; drawMap(mapMode,curAddParam,curIOMode); update(); return; }
+                else {
+                    curAddParam=index;
+                    drawMap(mapMode,curAddParam,curIOMode);
+                    countryHighlight->setText(resrc.strg[28]);
+                    shapeItems[index].setColor(QColor(0,0,0));
+                    countryHighlight->adjustSize();
+                }
+            }
+            else {
+                drawMap(mapMode,curAddParam,curIOMode);
+                countryHighlight->setText(shapeItems[index].toolTip());
+                shapeItems[index].setColor(QColor(0,0,0));
+                countryHighlight->adjustSize();
+            }
+            if(index>1) selectCountryEffect();
+            else selectSuperPowerEffect();
+            update();
+            showCountryCloseUp();
+        }
+        else {
+            if((mapMode>=8&&mapMode<=26)||mapMode==39){
+                mapModeAct[1]->setChecked(true);
+                curSelection=0;
+                curAddParam=0;
+                mapMode=1;
+                curIOMode=0;
+                drawMap(mapMode,curSelection,curIOMode);
+                update();
+            }
+            else {
+                curSelection=-1;
+                drawMap(mapMode,curAddParam,curIOMode);
+                update();
+                countryHighlight->setText(resrc.strg[153]);
+                countryHighlight->adjustSize();
+            }
+            selectNothingEffect();
+            }
         }
     }
 }
