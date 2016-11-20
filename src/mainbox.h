@@ -56,6 +56,7 @@ protected:
     void drawLegend(int t, int addParam);
     QString captionCreate(int t, int addParam, int val);
     void mousePressEvent(QMouseEvent *event);
+    void mouseDoubleClickEvent(QMouseEvent *event);
 
 private slots:
     void drawMap(int t, int addParam, bool inOutMode);
