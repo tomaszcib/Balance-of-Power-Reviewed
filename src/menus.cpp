@@ -250,6 +250,7 @@ void MainBox::createMenus(){
         else {
             contMenu[i]->addAction(doCloseUp);
             contMenu[i]->addAction(doHistory);
+            contMenu[i]->addAction(doNews[0]);
             contMenu[i]->addSeparator();
             for(int j=0;j<8;j++){
                 contMenu[i]->addAction(doPolicy[j]);
