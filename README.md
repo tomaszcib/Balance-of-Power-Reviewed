@@ -29,8 +29,6 @@ You should have the following packages/dependencies installed on your system:
 * glibc
 * libgcc_s1
 
-As well as the newest possible version of *g++* compiler if a need to recompile the object files occurs.
-
 ### Downloading and running
 Download the [bin/gnulinux-build](bin/gnulinux-build) folder from the repository and unpack it, for example to /home/your-username/BoPReviewed folder.
 
