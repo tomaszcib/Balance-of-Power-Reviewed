@@ -34,12 +34,9 @@ As well as the newest possible version of *g++* compiler if a need to recompile 
 ### Downloading and running
 Download the [bin/gnulinux-build](bin/gnulinux-build) folder from the repository and unpack it, for example to /home/your-username/BoPReviewed folder.
 
-Execute in the shell script:
+Execute in the shell:
 
-`$ cd /home/your-username/BoPReviewed`
-
-`$ ./BoPReviewed`
-
+`$ cd /home/your-username/BoPReviewed/BoPReviewed`
 
 ## Building the game with Qt Creator (any operating system)
 ### Requirements
