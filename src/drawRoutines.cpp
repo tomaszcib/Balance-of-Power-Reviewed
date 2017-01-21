@@ -1,5 +1,5 @@
 /*Balance of Power: Reviewed: A complex turn-based geopolitical simulation game
-* Copyright (c) 2016 Tomasz Ciborski (author of the port)
+* Copyright (c) 2016-2017 Tomasz Ciborski (author of the port)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,43 +17,43 @@
 
 #include "mainbox.h"
 
-void MainBox::drawMap0(){ selectNothingEffect();drawMap(0,0,0);}
-void MainBox::drawMap1(){ selectNothingEffect();drawMap(1,0,0);}
-void MainBox::drawMap2(){ selectNothingEffect();drawMap(2,0,0);}
-void MainBox::drawMap3(){ selectNothingEffect();drawMap(3,0,0);}
-void MainBox::drawMap4(){ selectNothingEffect();drawMap(4,0,0);}
-void MainBox::drawMap5(){ selectNothingEffect();drawMap(5,0,0);}
-void MainBox::drawMap6(){ selectNothingEffect();drawMap(6,1,0);}
-void MainBox::drawMap7(){ selectNothingEffect();drawMap(7,0,0); }
-void MainBox::drawMap8(){ drawMap(8,curSelection,0);}
-void MainBox::drawMap9(){ drawMap(8,curSelection,1);}
-void MainBox::drawMap10(){ drawMap(10,curSelection,0);}
-void MainBox::drawMap11(){ drawMap(10,curSelection,1);}
-void MainBox::drawMap12(){ drawMap(12,curSelection,0);}
-void MainBox::drawMap13(){ drawMap(12,curSelection,1);}
-void MainBox::drawMap14(){ drawMap(14,curSelection,0);}
-void MainBox::drawMap15(){ drawMap(14,curSelection,1);}
-void MainBox::drawMap16(){ drawMap(16,curSelection,0);}
-void MainBox::drawMap17(){ drawMap(16,curSelection,1);}
-void MainBox::drawMap18(){ drawMap(18,curSelection,0);}
-void MainBox::drawMap19(){ drawMap(20,curSelection,0);}
-void MainBox::drawMap20(){ drawMap(22,curSelection,0);}
-void MainBox::drawMap21(){ drawMap(24,curSelection,0);}
-void MainBox::drawMap22(){ drawMap(26,curSelection,0);}
-void MainBox::drawMap23(){ selectNothingEffect();drawMap(33,0,0);}
-void MainBox::drawMap24(){ selectNothingEffect();drawMap(33,1,0);}
-void MainBox::drawMap25(){ selectNothingEffect();drawMap(34,0,0);}
-void MainBox::drawMap26(){ selectNothingEffect();drawMap(34,1,0);}
-void MainBox::drawMap27(){ selectNothingEffect();drawMap(34,2,0);}
-void MainBox::drawMap28(){ selectNothingEffect();drawMap(35,0,0);}
-void MainBox::drawMap29(){ selectNothingEffect();drawMap(35,1,0);}
-void MainBox::drawMap30(){ selectNothingEffect();drawMap(35,2,0);}
-void MainBox::drawMap31(){ selectNothingEffect();drawMap(36,0,0);}
-void MainBox::drawMap32(){ selectNothingEffect();drawMap(36,1,0);}
-void MainBox::drawMap33(){ selectNothingEffect();drawMap(36,2,0);}
-void MainBox::drawMap34(){ selectNothingEffect();drawMap(37,0,0);}
-void MainBox::drawMap35(){ selectNothingEffect();drawMap(38,0,0);}
-void MainBox::drawMap36(){ drawMap(39,curSelection,0);}
+void MainBox::drawMap0(){ selectNothingEffect();drawMap(0,0,0);update();}
+void MainBox::drawMap1(){ selectNothingEffect();drawMap(1,0,0);update();}
+void MainBox::drawMap2(){ selectNothingEffect();drawMap(2,0,0);update();}
+void MainBox::drawMap3(){ selectNothingEffect();drawMap(3,0,0);update();}
+void MainBox::drawMap4(){ selectNothingEffect();drawMap(4,0,0);update();}
+void MainBox::drawMap5(){ selectNothingEffect();drawMap(5,0,0);update();}
+void MainBox::drawMap6(){ selectNothingEffect();drawMap(6,1,0);update();}
+void MainBox::drawMap7(){ selectNothingEffect();drawMap(7,0,0);update();}
+void MainBox::drawMap8(){ drawMap(8,curSelection,0);update();}
+void MainBox::drawMap9(){ drawMap(8,curSelection,1);update();}
+void MainBox::drawMap10(){ drawMap(10,curSelection,0);update();}
+void MainBox::drawMap11(){ drawMap(10,curSelection,1);update();}
+void MainBox::drawMap12(){ drawMap(12,curSelection,0);update();}
+void MainBox::drawMap13(){ drawMap(12,curSelection,1);update();}
+void MainBox::drawMap14(){ drawMap(14,curSelection,0);update();}
+void MainBox::drawMap15(){ drawMap(14,curSelection,1);update();}
+void MainBox::drawMap16(){ drawMap(16,curSelection,0);update();}
+void MainBox::drawMap17(){ drawMap(16,curSelection,1);update();}
+void MainBox::drawMap18(){ drawMap(18,curSelection,0);update();}
+void MainBox::drawMap19(){ drawMap(20,curSelection,0);update();}
+void MainBox::drawMap20(){ drawMap(22,curSelection,0);update();}
+void MainBox::drawMap21(){ drawMap(24,curSelection,0);update();}
+void MainBox::drawMap22(){ drawMap(26,curSelection,0);update();}
+void MainBox::drawMap23(){ selectNothingEffect();drawMap(33,0,0);update();}
+void MainBox::drawMap24(){ selectNothingEffect();drawMap(33,1,0);update();}
+void MainBox::drawMap25(){ selectNothingEffect();drawMap(34,0,0);update();}
+void MainBox::drawMap26(){ selectNothingEffect();drawMap(34,1,0);update();}
+void MainBox::drawMap27(){ selectNothingEffect();drawMap(34,2,0);update();}
+void MainBox::drawMap28(){ selectNothingEffect();drawMap(35,0,0);update();}
+void MainBox::drawMap29(){ selectNothingEffect();drawMap(35,1,0);update();}
+void MainBox::drawMap30(){ selectNothingEffect();drawMap(35,2,0);update();}
+void MainBox::drawMap31(){ selectNothingEffect();drawMap(36,0,0);update();}
+void MainBox::drawMap32(){ selectNothingEffect();drawMap(36,1,0);update();}
+void MainBox::drawMap33(){ selectNothingEffect();drawMap(36,2,0);update();}
+void MainBox::drawMap34(){ selectNothingEffect();drawMap(37,0,0);update();}
+void MainBox::drawMap35(){ selectNothingEffect();drawMap(38,0,0);update();}
+void MainBox::drawMap36(){ drawMap(39,curSelection,0);update();}
 void MainBox::showNewsp(){ showNewsWindow(0); }
 void MainBox::showUSAA(){ showNewsWindow(1); }
 void MainBox::showUSAO(){ showNewsWindow(2); }
@@ -81,7 +81,7 @@ void MainBox::showCountryCloseUp(){
     for(int i=0;i<20;i++){
         if(i>5&&i<12&&core.level==1) {clsUp.paramName[i]->setText(""); continue; }
         if(i>7&&i<12&&core.level==2) {clsUp.paramName[i]->setText(""); continue; }
-        if(curSelection<2&&i<2) { clsUp.paramName[i]->setText(""); continue; }
+        if(curSelection<2&&(i<2||(i>6&&i<12))) { clsUp.paramName[i]->setText(""); continue; }
         clsUp.paramName[i]->setText("<b>"+resrc.strg[475+i]+"</b>");
         clsUp.paramName[i]->adjustSize();
     }
@@ -933,6 +933,9 @@ void MainBox::setNewGame(){
     drawScores();
     yearLabel->setText("<font size=\"5\"><b>"+QString::number(core.year)+"</b></font>");
     newGameWindow.close();
+    nwsWind.reactionLine->setText("");
+    for(int i=0;i<3;i++){ nwsWind.leftInfo[i]->setText(""); nwsWind.leftInfoVal[i]->setText("");}
+
 }
 
 void MainBox::changeSides(){
@@ -941,11 +944,13 @@ void MainBox::changeSides(){
     holdsMouse[core.human]->setText("(holds the mouse)");
     holdsMouse[core.cmptr]->setText("");
     nextTurnAct->setDisabled(false);
+    update();
 }
 
 void MainBox::doNextTurn(){
     core.PrePlanMove();
     ReactNews();
+    update();
 }
 
 void MainBox::continueNextTurn(){

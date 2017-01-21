@@ -1,5 +1,5 @@
 /*Balance of Power: Reviewed: A complex turn-based geopolitical simulation game
-* Copyright (c) 2016 Tomasz Ciborski (author of the port)
+* Copyright (c) 2016-2017 Tomasz Ciborski (author of the port)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -141,6 +141,7 @@ private:
     void unloadAdvPanel();
     void createActions();
     void createMenus();
+    void createToolbars();
     void correctMenus();
     void correctCMenus();
     void selectCountryEffect();
@@ -179,6 +180,9 @@ private:
     QMenu *GDPSpndMenu[3];
     QMenu *helpMenu;
     QMenu *contMenu[3];
+    QToolBar *actionToolBar;
+    QToolBar *mapModeToolBar;
+    QToolBar *gameToolBar;
     QActionGroup *mapGroup;
     QAction *mapModeAct[37];
     QAction *doCloseUp;
@@ -191,7 +195,6 @@ private:
     QAction *chgSideAct;
     QAction *nextTurnAct;
     QAction *about;
-
     QAction *contTitle;
 
     QList<ShapeItem> shapeItems;
@@ -229,7 +232,6 @@ private:
     NGameWindow newGameWindow;
     LostGameWindow LGameWindow;
     QMessageBox aboutBox, saveBox;
-
 };
 
 #endif

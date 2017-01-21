@@ -1,5 +1,5 @@
 /*Balance of Power: Reviewed: A complex turn-based geopolitical simulation game
-* Copyright (c) 2016 Tomasz Ciborski (author of the port)
+* Copyright (c) 2016-2017 Tomasz Ciborski (author of the port)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -158,6 +158,7 @@ void MainBox::createActions(){
     }
 
     contTitle=new QAction(this);
+
 }
 
 void MainBox::correctMenus(){
@@ -258,6 +259,108 @@ void MainBox::createMenus(){
         }
     }
 
+}
+
+void MainBox::createToolbars(){
+
+    //and also put icons into actions
+    actionToolBar=addToolBar("Main Toolbar");
+    mapModeToolBar=new QToolBar("Map Mode Toolbar");
+    gameToolBar=new QToolBar("Gameplay Toolbar");
+    addToolBar(Qt::BottomToolBarArea,mapModeToolBar);
+    addToolBar(Qt::BottomToolBarArea,gameToolBar);
+    QIcon iconSet;
+    QPixmap iconSetPix;
+    QPixmap tempPix; //for trimming
+    iconSetPix.load(":/images/icons2.png","PNG");
+    for(int i=0;i<8;i++){
+        //add action icons
+        tempPix=iconSetPix.copy(i*64+i+1,1,64,64);
+        iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+        doPolicy[i]->setIcon(iconSet);
+        actionToolBar->addAction(doPolicy[i]);
+
+        //add basic mapmodes to mapmode bar
+        tempPix=iconSetPix.copy(i*64+i+1,131,64,64);
+        iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+        mapModeAct[i]->setIcon(iconSet);
+        mapModeToolBar->addAction(mapModeAct[i]);
+    }
+    mapModeToolBar->addSeparator();
+    actionToolBar->addSeparator();
+
+    //add close-up
+    tempPix=iconSetPix.copy(1,196,64,64);
+    iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+    doCloseUp->setIcon(iconSet);
+    actionToolBar->addAction(doCloseUp);
+    //add history
+    tempPix=iconSetPix.copy(66,196,64,64);
+    iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+    doHistory->setIcon(iconSet);
+    actionToolBar->addAction(doHistory);
+    //add newspaper
+    tempPix=iconSetPix.copy(131,196,64,64);
+    iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+    doNews[0]->setIcon(iconSet);
+    actionToolBar->addAction(doNews[0]);
+    actionToolBar->addSeparator();
+
+    for(int i=0;i<5;i++){
+        //add next mapmodes to mapmode bar
+        tempPix=iconSetPix.copy(i*64+i+1,66,64,64);
+        iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+        mapModeAct[2*i+8]->setIcon(iconSet);
+        mapModeToolBar->addAction(mapModeAct[2*i+8]);
+
+        //add news items to first bar
+        tempPix=iconSetPix.copy(i*64+i+196,196,64,64);
+        iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+        doNews[i+1]->setIcon(iconSet);
+        actionToolBar->addAction(doNews[i+1]);
+    }
+    for(int i=6;i<10;i++){
+        //add next mapmodes to mapmode bar
+        tempPix=iconSetPix.copy(i*64+i+1,66,64,64);
+        iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+        mapModeAct[i+12]->setIcon(iconSet);
+        mapModeToolBar->addAction(mapModeAct[i+12]);
+    }
+    //add 'at war with' mapmode to mapmode bar
+    tempPix=iconSetPix.copy(326,66,64,64);
+    iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+    mapModeAct[36]->setIcon(iconSet);
+    mapModeToolBar->addAction(mapModeAct[36]);
+    mapModeToolBar->addSeparator();
+    mapModeToolBar->addSeparator();
+    mapModeToolBar->addSeparator();
+
+    //add 'switch sides' and 'next turn' to gameToolBar
+    tempPix=iconSetPix.copy(392,262,64,64);
+    iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+    chgSideAct->setIcon(tempPix);
+    tempPix=iconSetPix.copy(456,262,64,64);
+    iconSet.addPixmap(tempPix,QIcon::Normal,QIcon::On);
+    nextTurnAct->setIcon(iconSet);
+    gameToolBar->addSeparator();
+    gameToolBar->addSeparator();
+    gameToolBar->addSeparator();
+    gameToolBar->addAction(chgSideAct);
+    gameToolBar->addAction(nextTurnAct);
+    gameToolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+
+    actionToolBar->setIconSize(QSize(32,32));
+    mapModeToolBar->setIconSize(QSize(32,32));
+    gameToolBar->setIconSize(QSize(18,18));
+    actionToolBar->setMovable(false);
+    mapModeToolBar->setMovable(false);
+    gameToolBar->setMovable(false);
+    mapModeToolBar->setAllowedAreas(Qt::NoToolBarArea);
+    actionToolBar->setAllowedAreas(Qt::TopToolBarArea);
+    mapModeToolBar->setAllowedAreas(Qt::BottomToolBarArea);
+    gameToolBar->setAllowedAreas(Qt::BottomToolBarArea);
+    actionToolBar->setContextMenuPolicy(Qt::NoContextMenu);
+    mapModeToolBar->setContextMenuPolicy(Qt::NoContextMenu);
 }
 
 void MainBox::doSaveGame(){

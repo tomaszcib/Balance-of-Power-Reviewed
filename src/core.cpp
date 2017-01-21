@@ -1,5 +1,5 @@
 /*Balance of Power: Reviewed: A complex turn-based geopolitical simulation game
-* Copyright (c) 2016 Tomasz Ciborski (author of the port)
+* Copyright (c) 2016-2017 Tomasz Ciborski (author of the port)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -907,7 +907,7 @@ void Core::CompuAI(){
       oldVal=state[j].destabilization[cmptr];
       if(level==4) need=(state[j].govPopul-20)/4;
       else need=(state[j].govPopul-20)/2;  //balancing the game
-      if(need>0) need=0;
+      if(need>0/*||state[j].govPopul>10*/) need=0;
       Max=5;
       if(level==1) need=0;
       break;
@@ -1028,9 +1028,9 @@ int Core::loadData(){
     long int x;
     int tmp[3];
     ifstream readCountry, readRelations, readBorders;
-    readCountry.open("countryData1.txt");
-    readRelations.open("minorRelations1.txt");
-    readBorders.open("borders1.txt");
+    readCountry.open("countryData1.dat");
+    readRelations.open("minorRelations1.dat");
+    readBorders.open("borders1.dat");
     for(int i=0;i<N;i++){
       readCountry>>state[i].name>>state[i].nameLanguageGroup>>state[i].leaderTitle;
       readCountry>>state[i].population>>state[i].gdp>>state[i].gdpSpending[2]>>state[i].govIdeol;
@@ -1481,23 +1481,24 @@ int Core::saveGame(){
         bufSav=buffer.data();
         size=buffer.size();
         for(int j=0;j<size;j++) if(bufSav[j]==' ') bufSav[j]='_';
-        save<<bufSav<<" ";
+        save<<bufSav<<endl;
         buffer=state[i].oldLeaderName.toLatin1();
         bufSav=buffer.data();
         size=buffer.size();
         for(int j=0;j<size;j++) if(bufSav[j]==' ') bufSav[j]='_';
-        save<<bufSav<<" ";
+        save<<bufSav<<endl;
     }
     save.close();
     return 0;
 }
 
 int Core::loadGame(){
+
+    clearAllData();
+    level=4;
+    loadData();
+
     ifstream load;
-    /*QByteArray buffer;
-    QString temp;
-    char *bufSav;
-    int size;*/
 
     load.open("SaveGame.dat");
     QTextStream out(stdout);
@@ -1509,7 +1510,6 @@ int Core::loadGame(){
         load>>news[i].type>>news[i].host>>news[i].victim>>news[i].verb>>
                 news[i].actor>>news[i].newNVal>>news[i].oldNVal>>news[i].worth
            >>news[i].crisisVal;
-        news[i].headLine=generateNewsHeadline(news[i].victim,news[i].verb,news[i].actor,news[i].oldNVal,news[i].newNVal,news[i].host);
     }
     for(int i=0;i<2;i++){
         load>>adventur[i]>>integrity[i]>>pugnacty[i]>>govtAidBalance[i]>>
@@ -1545,17 +1545,15 @@ int Core::loadGame(){
     for(int i=0;i<8;i++)
         for(int j=0;j<2;j++)
             load>>historyScore[i][j];
-
-   /* for(int i=0;i<N;i++){
-        load>>bufSav;
-        //for(int j=0;j<strlen(bufSav);j++) {out<<bufSav[j]; if(bufSav[j]=='_') bufSav[j]=' '; }
-        //state[i].leaderName=QString(QLatin1String(bufSav));
-        state[i].leaderName=bufSav;
-        load>>bufSav;
-        //for(int j=0;j<strlen(bufSav);j++) if(bufSav[j]=='_') bufSav[j]=' ';
-        //state[i].oldLeaderName=QString(QLatin1String(bufSav));
-        state[i].oldLeaderName=bufSav;
-    }*/
+    string temp;
+    for(int i=0;i<N;i++){
+        getline(load, temp);
+        state[i].leaderName=QString::fromStdString(temp);
+        getline(load, temp);
+        state[i].oldLeaderName=QString::fromStdString(temp);
+    }
+    for(int i=0;i<129;i++)
+        news[i].headLine=generateNewsHeadline(news[i].victim,news[i].verb,news[i].actor,news[i].oldNVal,news[i].newNVal,news[i].host);
     load.close();
     return 0;
 }
