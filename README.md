@@ -9,7 +9,7 @@ The game takes place in 1980s, a period of geopolitical rivalry between the USA 
 The game manual can be found [here](http://www.atarimania.com/game-atari-st-balance-of-power-the-1990-edition_8658.html).
 
 ## Disclaimer
-The game is a port of [Chris Crawford's](http://www.erasmatazz.com/) work called "Balance of Power: 1990 edition" from 1988.
+The game is an adaptation of [Chris Crawford's](http://www.erasmatazz.com/) work called "Balance of Power: 1990 edition" from 1988.
 
 ## Known bugs
 * Loading the game: it is not possible to play the game just right after the startup of the program. Set a new game every time you run the app and the game should be working.
