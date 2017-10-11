@@ -23,6 +23,6 @@ The Windows package with no installation requirements has been placed in the [bi
 * C++ compiler with C++11 standard compatibility (g++ for GNU/Linux and MinGW for Windows in my case)
 
 ### Loading the project file
-If you want to compile the source manually, download the [src](src/) folder from this repository and open *bopreviewed.pro* file inside your Qt Creator IDE. Simply press "Build" button.
+If you want to compile the source manually, download the source folder from this repository and open *bopreviewed.pro* file inside your Qt Creator IDE. Simply press "Build" button.
 
-**Important:** before running the app, remember to copy **.dat** files from [src/data](src/data/) subfolder to your Qt working directory.
+**Important:** before running the app, remember to copy **.dat** files from [/data](/data/) subfolder to your Qt working directory.
