@@ -1,9 +1,0 @@
-beta v1.1 (January 2017)
-- added toolbars on the top and bottom of the window, which contain the most useful actions and mapmodes for the player
-- double-click on a country shows the close-up window
-- fixed a bug causing Cuba to constantly finlandize to the USA
-- fixed a bug causing GDP economic sectors percentage shares not to be shown correctly
-- fixed a bug causing leader names not to be shown at the startup
-- YET THE LOAD GAME FUNCTION IS BUGGED
-- minor changes to overall game balance between USA and USSR
-- changed extension of game core data files from .txt to .dat
