@@ -640,6 +640,7 @@ void MainBox::showEconomy(){
                 if(plot[j]<minimum) minimum=plot[j];
                 if(plot[j]>maximum) maximum=plot[j];
             }
+            if(maximum == minimum) maximum++;
             for(int j=0;j<=x;j++) {
                 plot[j]-=minimum;
                 plot[j]=(plot[j]*96)/(maximum-minimum);
@@ -1068,6 +1069,22 @@ void MainBox::setNewGame(){
     else { core.human=1; core.cmptr=0; }
     if(newGameWindow.mod[0]->isChecked()) core.TwoPFlag=false;
     else core.TwoPFlag=true;
+    for(int i=0;i<N;i++){
+        for(int j=0;j<N;j++){
+            core.state[i].milAid[j] = 0;
+            core.state[i].milIntv[j] = 0;
+            core.state[i].rebAid[j] = 0;
+            core.state[i].rebIntv[j] = 0;
+            if(j < 2){
+                core.state[i].destabilization[j] = 0;
+                core.state[i].pressure[j] = 0;
+                core.state[i].treaty[j] = 0;
+                core.state[i].finlandization[j] = 0;
+            }
+        }
+        core.state[i].totalIntv=0;
+        core.state[i].govtAidBalance=0;
+    }
     core.clearAllData();
     core.year=1981;
     core.loadData();

@@ -1069,6 +1069,12 @@ int Core::loadData(){
                    >>state[tmp[1]].milIntv[tmp[0]]
                   >>state[tmp[1]].milAid[tmp[0]]
                  >>state[tmp[1]].overallRelationship[tmp[0]];
+        if(level < 4){
+            state[tmp[1]].rebIntv[tmp[0]] = 0;
+            state[tmp[1]].rebAid[tmp[0]] = 0;
+            state[tmp[1]].milIntv[tmp[0]] = 0;
+            state[tmp[1]].milAid[tmp[0]] = 0;
+        }
       }
       readBorders>>x;
       for(int j=0;j<x/2;j++){
@@ -1585,6 +1591,13 @@ void Core::clearAllData(){
     for(int i=0;i<N;i++){
         state[i].totalIntv=0;
         state[i].govtAidBalance=0;
+    }
+    for(int i=0;i<9;i++){
+       for(int j=0;j<N;j++)
+           for(int k=0;k<31;k++)
+               history[i][j][k]=0;
+       historyScore[i][0] = 0;
+       historyScore[i][1] = 0;
     }
     ANWFlag=0, crisis=0, QuitFlag=0, WinFlag=0;
 }
